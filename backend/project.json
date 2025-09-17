@@ -1,0 +1,18 @@
+{
+    "name": "backend",
+    "targets": {
+      "serve": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "cd backend/polls-backend && ./mvnw spring-boot:run"
+        }
+      },
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "cd backend/polls-backend && ./mvnw clean package"
+        }
+      }
+    }
+  }
+  

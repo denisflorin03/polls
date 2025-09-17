@@ -1,0 +1,10 @@
+
+ NX   Failed to process project graph.
+
+An error occurred while processing files for the @nx/vite/plugin plugin (Defined at nx.json#plugins[3])
+.
+  - apps/polls/vite.config.ts: require() of ES Module /home/denis/PycharmProjects/polls/node_modules/vite/dist/node/index.js from /home/denis/PycharmProjects/polls/apps/polls/vite.config.ts not supported.
+Instead change the require of index.js in /home/denis/PycharmProjects/polls/apps/polls/vite.config.ts to a dynamic import() which is available in all CommonJS modules.
+
+
+failed to load config from /home/denis/PycharmProjects/polls/apps/polls/vite.config.ts
