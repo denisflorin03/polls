@@ -455,6 +455,9 @@ export function NxWelcome({ title }: { title: string }) {
                 <span>You&apos;re up and running</span>
               </h2>
               <a href="#commands"> What&apos;s next? </a>
+              <a href="/login" style={{marginLeft: '1rem', background: 'rgba(102, 126, 234, 1)', color: 'white'}}> Go to Login </a>
+              <a href="/register" style={{marginLeft: '1rem', background: 'rgba(168, 85, 247, 1)', color: 'white'}}> Register </a>
+              <a href="/test" style={{marginLeft: '1rem', background: 'rgba(34, 197, 94, 1)', color: 'white'}}> Test Page </a>
             </div>
             <div className="logo-container">
               <svg
