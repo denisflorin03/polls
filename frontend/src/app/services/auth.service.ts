@@ -25,7 +25,7 @@ export interface AuthResponse {
 }
 
 class AuthService {
-  private baseUrl = 'http://localhost:8080/api';
+  private baseUrl = 'http://localhost:8081/api';
   private tokenKey = 'polls_auth_token';
 
   /**

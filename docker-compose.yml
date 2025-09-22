@@ -42,11 +42,11 @@ services:
       - polls-network
     restart: unless-stopped
 
-  # Frontend (React/Vite) - pentru viitor
+  # Frontend (React/Vite) - pentru viitor                                                   
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./frontend/Dockerfile
     container_name: polls-frontend
     ports:
       - "3000:3000"

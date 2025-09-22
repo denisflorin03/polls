@@ -11,10 +11,17 @@ public class Poll {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL)
+    @Column(name = "description", columnDefinition = "TEXT")
+    private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Question> questions;
 
     @Column(name = "created_at")
@@ -23,8 +30,10 @@ public class Poll {
     // constructors
     public Poll() {}
 
-    public Poll(String title, List<Question> questions) {
+    public Poll(String title, String description, User user, List<Question> questions) {
         this.title = title;
+        this.description = description;
+        this.user = user;
         this.questions = questions;
         this.createdAt = LocalDateTime.now();
     }
@@ -35,6 +44,12 @@ public class Poll {
     
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
+    
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
     
     public List<Question> getQuestions() { return questions; }
     public void setQuestions(List<Question> questions) { this.questions = questions; }

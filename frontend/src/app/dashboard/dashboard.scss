@@ -29,9 +29,15 @@
     cursor: pointer;
     transition: all 0.2s ease;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: #c53030;
       transform: translateY(-1px);
+    }
+
+    &:disabled {
+      background: #a0aec0;
+      cursor: not-allowed;
+      transform: none;
     }
   }
 }
@@ -83,9 +89,16 @@
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
 
-        &:hover {
+        &:hover:not(:disabled) {
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        &:disabled {
+          background: #a0aec0;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
         }
       }
 
@@ -94,10 +107,19 @@
         color: #4a5568;
         border: 2px solid #e2e8f0;
 
-        &:hover {
+        &:hover:not(:disabled) {
           border-color: #cbd5e0;
           transform: translateY(-1px);
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        &:disabled {
+          background: #f7fafc;
+          color: #a0aec0;
+          border-color: #e2e8f0;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
         }
       }
     }
